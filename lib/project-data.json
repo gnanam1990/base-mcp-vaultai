@@ -1,0 +1,58 @@
+{
+  "repo": "base-mcp-vaultai",
+  "name": "VaultAI",
+  "shortName": "VA",
+  "api": "vaultai",
+  "category": "AI Yield Vault",
+  "tagline": "AI-selected vault strategy proposals for Base DeFi.",
+  "status": "Vault console MVP foundation",
+  "mission": "Let users inspect deposits, strategy allocations, risk signals, and user-approved rebalance proposals before vault automation.",
+  "primaryAction": "Deposit USDC",
+  "secondaryAction": "Review strategy",
+  "metrics": [
+    {
+      "label": "TVL",
+      "value": "$18.4k",
+      "tone": "blue"
+    },
+    {
+      "label": "Target APY",
+      "value": "8.6%",
+      "tone": "green"
+    },
+    {
+      "label": "Pending proposals",
+      "value": "3",
+      "tone": "amber"
+    }
+  ],
+  "workflow": [
+    "User deposits into a transparent vault interface.",
+    "AI proposes allocations across approved strategy adapters.",
+    "Risk checks annotate every proposal before execution.",
+    "User-approved rebalances update allocation and receipt history."
+  ],
+  "tools": [
+    "get_vault_state",
+    "get_strategy_quote",
+    "prepare_deposit",
+    "prepare_rebalance"
+  ],
+  "records": [
+    [
+      "Morpho USDC",
+      "42% allocation",
+      "8.2% APY"
+    ],
+    [
+      "Moonwell USDC",
+      "28% allocation",
+      "7.7% APY"
+    ],
+    [
+      "Aerodrome LP",
+      "30% allocation",
+      "12.1% APY"
+    ]
+  ]
+}
