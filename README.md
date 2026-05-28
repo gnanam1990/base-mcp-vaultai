@@ -1,30 +1,34 @@
 # VaultAI
 
-AI-selected yield vault strategies on Base.
+AI-selected vault strategy proposals for Base DeFi.
 
-**Status:** Planned ninth build after DeFi Copilot proves read and recommendation logic.
+**Status:** Vault console MVP foundation
 
-VaultAI provides an ERC-4626-style vault interface where strategy changes are recommended by AI and approved through transparent onchain flows.
+Let users inspect deposits, strategy allocations, risk signals, and user-approved rebalance proposals before vault automation.
 
-## Why It Exists
-Base MCP gives AI assistants access to Base Account actions such as balances, sends, swaps, contract calls, and x402 payments, with user approval for writes. This project turns that capability into a focused product for DeFi users who prefer deposit-and-monitor yield products with transparent strategy proposals.
+## Current MVP
+- Base industrial-neon UI theme from the shared suite prompt.
+- Responsive dashboard with wallet/action controls, metrics, workflow, MCP tools, and live record surface.
+- Product status API at `/api/vaultai/status`.
+- Smoke checks for required dashboard data.
 
-## Core Capabilities
-- Vault deposit and withdraw UI with position and share accounting.
-- Strategy adapter architecture for Morpho, Moonwell, Aerodrome, or future integrations.
-- AI allocation proposal engine based on yield and risk inputs.
-- User-approved rebalance prepare endpoints.
-- Vault analytics for TVL, APY, allocation, and proposal history.
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-## Roadmap Snapshot
-1. Prototype vault contract and local tests.
-2. Build read-only vault dashboard and strategy proposal UI.
-3. Add deposit/withdraw on Sepolia.
-4. Implement one strategy adapter and user-approved rebalance path.
-5. Launch only after contract review, docs, and clear risk disclosures.
+Open `http://127.0.0.1:3000`.
 
-## Repository Status
-This repository is public from day one. It starts with product, architecture, roadmap, and demo documentation. Implementation commits should stay small and use conventional commit prefixes.
+## Checks
+```bash
+npm run typecheck
+npm run build
+npm run test:smoke
+```
+
+## Next Build Slice
+Wire the mocked dashboard data into real Base Sepolia reads, x402 payment verification, or contract prepare endpoints depending on this product's launch path.
 
 ## License
 MIT
