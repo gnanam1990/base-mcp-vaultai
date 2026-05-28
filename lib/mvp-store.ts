@@ -68,7 +68,12 @@ const seedItems: MvpItem[] = seedRecords.map((record, index) => ({
 }));
 
 function dbPath() {
-  return process.env.VAULTAI_DATA_FILE || path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "vaultai-db.json");
+  if (process.env.VAULTAI_DATA_FILE) {
+    return process.env.VAULTAI_DATA_FILE;
+  }
+  return process.env.VERCEL
+    ? path.join("/tmp", "vaultai-db.json")
+    : path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "vaultai-db.json");
 }
 
 function readDb(): MvpDb {
